@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/game.o \
 	${OBJECTDIR}/graphics.o \
 	${OBJECTDIR}/main.o
 
@@ -62,6 +63,11 @@ LDLIBSOPTIONS=-lmingw32 -lSDL2main -lSDL2
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cavestory_development.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/cavestory_development ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/game.o: game.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Igraphics.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/game.o game.cpp
 
 ${OBJECTDIR}/graphics.o: graphics.cpp 
 	${MKDIR} -p ${OBJECTDIR}

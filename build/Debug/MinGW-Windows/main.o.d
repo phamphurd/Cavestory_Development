@@ -1,4 +1,5 @@
-build/Debug/MinGW-Windows/main.o: main.cpp \
- ../Cavestory_Development/graphics.h
+build/Debug/MinGW-Windows/main.o: main.cpp graphics.h game.h
 
-../Cavestory_Development/graphics.h:
+graphics.h:
+
+game.h:

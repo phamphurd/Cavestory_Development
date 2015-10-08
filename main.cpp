@@ -2,13 +2,11 @@
  *The enter point of the program
  */
 #include "SDL/SDL.h"
-#include "../Cavestory_Development/graphics.h"
+#include "graphics.h"
+#include "game.h"
 
 
 int main(int argc, char* argv[]){
-    Graphics graphics;
-    while(true){
-        
-    }
+    Game game;
     return 0;
 }

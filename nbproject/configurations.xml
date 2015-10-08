@@ -5,7 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
     </logicalFolder>
-    <logicalFolder name="f1" displayName="Notes" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f1" displayName="Notes" projectFiles="true">
       <itemPath>../../SDL Setup.txt</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -16,9 +16,11 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="headers" projectFiles="true">
+        <itemPath>game.h</itemPath>
         <itemPath>graphics.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="src" projectFiles="true">
+        <itemPath>game.cpp</itemPath>
         <itemPath>graphics.cpp</itemPath>
         <itemPath>main.cpp</itemPath>
       </logicalFolder>
@@ -60,6 +62,10 @@
       </compileType>
       <item path="../../SDL Setup.txt" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="game.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="game.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="graphics.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="graphics.h" ex="false" tool="1" flavor2="0">
@@ -88,6 +94,10 @@
         </asmTool>
       </compileType>
       <item path="../../SDL Setup.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="game.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="game.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="graphics.cpp" ex="false" tool="1" flavor2="0">
       </item>
