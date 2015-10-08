@@ -1,4 +1,5 @@
 #include "SDL/SDL.h"
+#include "SDL/SDL_image.h"
 
 #include "game.h"
 #include "graphics.h"
@@ -27,6 +28,8 @@ void Game::gameLoop(){
     Input input;
     SDL_Event event;   //SDL event object
     
+    this->_player = Sprite(graphics, "content/Sprites/MyChar.png", 0, 0, 16, 16, 100, 100);
+    
     int LAST_UPDATE_TIME = SDL_GetTicks();
     //Start the game loop
     while(true){
@@ -54,10 +57,17 @@ void Game::gameLoop(){
         int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
         this->update(std::min(ELAPSED_TIME_MS,MAX_FRAME_TIME));
         LAST_UPDATE_TIME = CURRENT_TIME_MS;
+        
+        this->draw(graphics);
     }
 }
 
 void Game::draw(Graphics& graphics){
+    graphics.clear();
+    
+    this->_player.draw(graphics, 100, 100);
+    
+    graphics.flip();
     
 }
 
