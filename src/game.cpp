@@ -10,28 +10,27 @@
  */
 
 namespace {
-    const int FPS = 50;
-    const int MAX_FRAME_TIME = 5*1000/FPS;
+	const int FPS = 50;
+	const int MAX_FRAME_TIME = 5 * 1000 / FPS;
 }
 
-Game::Game(){
-    SDL_Init(SDL_INIT_EVERYTHING);
-    this->gameLoop();
+Game::Game() {
+	SDL_Init(SDL_INIT_EVERYTHING);
+	this->gameLoop();
 }
 
-Game::~Game(){
-    
+Game::~Game() {
+
 }
 
-void Game::gameLoop(){
-    Graphics graphics; //object
-    Input input;
-    SDL_Event event;   //SDL event object
-    
-    this->_player = Player(graphics, 100, 100);
+void Game::gameLoop() {
+	Graphics graphics;
+	Input input;
+	SDL_Event event;
 
-    this->_level = Level("Map_1", Vector2(100,100),graphics);
-    
+	this->_player = Player(graphics, 100, 100);
+	this->_level = Level("Map1", Vector2(100, 100), graphics);
+
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 	//Start the game loop
 	while (true) {
@@ -73,17 +72,16 @@ void Game::gameLoop(){
 	}
 }
 
-void Game::draw(Graphics& graphics){
-    graphics.clear();
-    
-    this->_level.draw(graphics);
-    this->_player.draw(graphics);
-    
-    graphics.flip();
-    
+void Game::draw(Graphics &graphics) {
+	graphics.clear();
+
+	this->_level.draw(graphics);
+	this->_player.draw(graphics);
+
+	graphics.flip();
 }
 
-void Game::update(float elapsedTime){
-    this->_player.update(elapsedTime);
-    this->_level.update(elapsedTime);
+void Game::update(float elapsedTime) {
+	this->_player.update(elapsedTime);
+	this->_level.update(elapsedTime);
 }
